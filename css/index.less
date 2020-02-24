@@ -1,0 +1,374 @@
+@import 'base.css';
+
+// 头部导航
+
+body {
+    padding: 90px 0;
+}
+
+// 头部导航
+.top_nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-width: 1200px;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    height: 86px;
+    background-color: #222;
+
+    h1 {
+        text-indent: -9999px;
+        width: 200px;
+        height: 34px;
+        line-height: 34px;
+
+        .logo {
+            display: flex;
+            width: 200px;
+            height: 34px;
+            background: url('../images/logo.png')no-repeat left center;
+        }
+    }
+
+    input {
+        width: 180px;
+        height: 40px;
+        padding-left: 20px;
+        border-radius: 5px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        font-size: 16px;
+    }
+
+    button {
+        width: 80px;
+        height: 40px;
+        background: #fece3e;
+        border-radius: 5px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        color: #333;
+        font-weight: 500;
+        font-size: 16px;
+
+        cursor: pointer;
+    }
+
+    ul {
+        display: flex;
+        margin-left: 100px;
+        align-items: flex-end;
+
+        li {
+            width: 90px;
+            height: 40px;
+            margin: 0 6px;
+            border-radius: 5px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #fff;
+
+        }
+
+        .active {
+            background-color: #c8a286;
+            color: #fff;
+        }
+
+        .active a {
+            color: #fff;
+            padding-left: 12px;
+        }
+
+        li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            color: #333;
+
+        }
+
+        li:nth-child(1) a {
+            background: url('../images/sword.png') no-repeat 10px center;
+        }
+
+
+        li:nth-child(2) a {
+            background: url('../images/knight.png') no-repeat 10px center;
+        }
+
+        li:nth-child(3) a {
+            background: url('../images/Archer.png') no-repeat 10px center;
+        }
+
+        li:nth-child(4) a {
+            background: url('../images/hunter.png') no-repeat 10px center;
+
+        }
+
+        li:nth-child(5) a {
+            background: url('../images/magic.png') no-repeat 10px center;
+
+        }
+
+        li:nth-child(6) a {
+            background: url('../images/hunter.png') no-repeat 10px center;
+
+        }
+
+    }
+}
+
+// 英雄列表
+.content {
+    width: 1170px;
+    margin: 0 auto;
+
+    ul {
+        li {
+            width: 25%;
+            height: 70px;
+            float: left;
+            margin: 20px 0;
+
+            a {
+                display: flex;
+
+                .left {
+                    margin-right: 20px;
+
+                    img {
+                        width: 70px;
+                        height: 70px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 底部导航
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-width: 1200px;
+    height: 60px;
+    background: #222;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+        height: 60px;
+        align-items: center;
+        display: flex;
+    }
+
+    .left {
+        width: 300px;
+        height: 70px;
+        padding-left: 50px;
+
+        ul li:nth-child(1) {
+            width: 154px;
+            height: 36px;
+
+            background: url('../images/app_store.png')no-repeat;
+            background-size: 100% auto;
+        }
+
+        ul li:nth-child(2) {
+            width: 154px;
+            height: 36px;
+            background: url('../images/google_play.png')no-repeat;
+            background-size: 100% auto;
+        }
+    }
+
+    .right {
+        width: 350px;
+
+        li {
+            width: 80px;
+            height: 40px;
+            margin: 0 10px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #f6f6f6;
+            cursor: pointer;
+
+            span {
+                color: #666;
+            }
+        }
+
+        .previous_page,
+        .next_page {
+            display: flex;
+
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+
+
+        li:hover {
+            background-color: #ccc;
+        }
+
+        li:nth-child(2):hover {
+            cursor: pointer;
+            background-color: #f6f6f6;
+        }
+    }
+}
+
+//遮罩层
+.cover {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    z-index: 10;
+
+    // 技能动图图
+    .skillgif {
+
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, .6);
+        z-index: 20;
+
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 340px;
+            height: auto;
+            z-index: 30;
+
+
+        }
+    }
+
+    // 详情表格
+    .hero_detail {
+
+        border-radius: 10px;
+        background-color: #fff0e3;
+
+        caption {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background-color: #fff0e3;
+            height: 50px;
+            line-height: 50px;
+            color: #604c3c;
+        }
+
+        border-collapse: collapse;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 300px;
+
+
+        th {
+            background-color: #604c3c;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        th:nth-child(2) {
+            border-left: 1px solid #c1b591;
+            border-right: 1px solid #c1b591;
+        }
+
+        th,
+        td {
+            padding: 10px;
+        }
+
+        tbody {
+            td:nth-child(2) {
+                border-left: 1px solid #c1b591;
+                border-right: 1px solid #c1b591;
+
+            }
+
+            .hero {
+                img {
+                    width: 50px;
+                    margin-bottom: 20px;
+
+                }
+            }
+
+            .skill {
+                img {
+                    width: 50px;
+                    margin-bottom: 20px;
+
+                }
+
+                a {
+                    color: #ee7171;
+                    text-decoration: underline;
+                    font-size: 14px;
+                }
+            }
+
+            .weapon {
+                img {
+                    width: 50px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+
+}
+
+// 搜索不到显示
+.temp {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.temp p {
+    font-size: 25px;
+    color: #999;
+}
+
+.temp span {
+    color: #999;
+    font-size: 40px;
+}
